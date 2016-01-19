@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
+    private int count =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +46,28 @@ public class MainActivity extends AppCompatActivity {
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
-    public void buttonOnClick(View v) {
+    /**
+     * Increments text value when button is clicked.
+     * @param v View
+     */
+    public void addButtonOnClick(View v) {
         // do something when the button is clicked
-        Button button = (Button) v;
-        button.setText("I've Been Clicked!");
+        this.count++;
         TextView myTextView = (TextView)
                 findViewById(R.id.textView);
-        myTextView.setText("You Clicked My Button!");
+        myTextView.setText("" + this.count);
+    }
+
+    /**
+     * Decrements text value when button is clicked.
+     * @param v View
+     */
+    public void minusButtonOnClick(View v) {
+        // do something when the button is clicked
+        this.count--;
+        TextView myTextView = (TextView)
+                findViewById(R.id.textView);
+        myTextView.setText("" + this.count);
     }
 
     @Override
