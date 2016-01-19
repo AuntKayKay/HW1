@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         this.count++;
         TextView myTextView = (TextView)
                 findViewById(R.id.textView);
-        myTextView.setText("" + this.count);
+        myTextView.setText("" + this.count); 
     }
 
     /**
